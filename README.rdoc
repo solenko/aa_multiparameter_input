@@ -1,0 +1,26 @@
+= Active Admin Multiparameter Input
+
+Add support of [multiparameter_field|https://github.com/ernie/meta_search/#multiparameter_field] to ActiveAdmin fuilters.
+
+With multiparameter field you can use custom search methods with more than one parameters.
+
+== Example
+
+  class User < ActiveRecord::Base
+    search_method :nearest, :splat_param => true, :type => [:string, :integer]
+    def nearest(zip_code, radious)
+      # search method should return ActiveRecord::Relation
+    end  
+  end
+
+  ActiveAdmin.register User do
+    filter :nearest, :as => :multiparameter, :fields => [{:field_type => :text_field}, {:field_type => :number_field, :type_cast => 'i', :size => 5}]
+  end
+
+
+== Installation
+
+Put active_admin directory somewhere under load path and formastic will autoload it for You.
+
+
+
