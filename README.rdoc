@@ -1,6 +1,6 @@
 = Active Admin Multiparameter Input
 
-Add support of multiparameter_field ([https://github.com/ernie/meta_search/#multiparameter_field]) to ActiveAdmin fuilters.
+Add support of multiparameter_field (https://github.com/ernie/meta_search/#multiparameter_field) to ActiveAdmin fuilters.
 
 With multiparameter field you can use custom search methods with more than one parameters.
 
